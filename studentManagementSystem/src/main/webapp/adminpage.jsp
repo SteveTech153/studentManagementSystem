@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>SMS</title>
+<title>sms_admin</title>
 </head>
 <body>
-	<a href="adminpage.jsp">admin page</a>
+	<a href="AdminAcc.jsp">create a account</a>
+	<br>
+	<a href="adminlogin.jsp">login</a>
 </body>
 </html>
