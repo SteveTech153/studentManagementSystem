@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="studentManagementSystem/src/main/java"/>
+	<classpathentry kind="lib" path="studentManagementSystem/src/main/webapp/WEB-INF/lib/mysql-connector-java-8.0.28.jar"/>
+	<classpathentry kind="output" path="studentManagementSystem/build/classes"/>
+</classpath>

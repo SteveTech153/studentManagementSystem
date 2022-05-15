@@ -65,9 +65,11 @@ public class AdminLogin extends HttpServlet{
             	out.println("Invalid username");
             else {
             	boolean flag2 = false;
-            	rs.first();
-            	while(rs.next()) {
-                	if(rs.getString("email").compareTo(email)==0) {
+//            	if(!rs.isFirst())
+//            		rs.first();
+            	ResultSet rs1 = stmt.executeQuery("select * from sms_adminlogin");
+            	while(rs1.next()) {
+                	if(rs1.getString("email").compareTo(email)==0) {
                 		flag2=true;
                 		break;
                 	}
@@ -77,9 +79,11 @@ public class AdminLogin extends HttpServlet{
                 	out.println("Invalid email");
                 else {
                 	boolean flag3 = false;
-                	rs.first();
-                	while(rs.next()) {
-                    	if(rs.getString("password").compareTo(pass)==0) {
+//            	if(!rs.isFirst())
+//            		rs.first();
+                	ResultSet rs2 = stmt.executeQuery("select * from sms_adminlogin");
+                		while(rs2.next()) {
+                    	if(rs2.getString("password").compareTo(pass)==0) {
                     		flag3=true;
                     		break;
                     		

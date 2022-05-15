@@ -1,5 +1,6 @@
 package com.studentManagementSystem;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -24,19 +25,31 @@ public class AdmAccCreate extends HttpServlet {
 	String uname;
     String email;
     String pass;
+    String pass1;
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    	func1(req,resp);
+    	try {
+			func1(req,resp);
+		} catch (ServletException | IOException | InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
     	@Override
         protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    		func1(req,resp);
+    		try {
+				func1(req,resp);
+			} catch (ServletException | IOException | InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         }
-    	void func1(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    	void func1(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, InterruptedException {
     		uname=req.getParameter("uname");
             email=req.getParameter("email");
             pass=req.getParameter("pass");
+            pass1=req.getParameter("pass1");
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con= null;
@@ -45,12 +58,19 @@ public class AdmAccCreate extends HttpServlet {
                 ResultSet rs = stmt.executeQuery("select * from sms_adminlogin");
                 PrintWriter out = resp.getWriter();
                 if(!rs.next()) {
+                	if(pass.compareTo(pass1)==0) {
                     PreparedStatement pst= con.prepareStatement("insert into sms_adminlogin(username,email,password) values(?,?,?)");
                     pst.setString(1,uname);
                     pst.setString(2,email);
                     pst.setString(3,pass);
                     if(pst.executeUpdate()>0)
                     	out.println("account created for admin successfully !");
+                	}else {
+						out.println("password didn't match!");
+						wait(2000);//
+						RequestDispatcher requestDispatcher = req.getRequestDispatcher("/adminAcc.jsp");
+			            requestDispatcher.forward(req, resp);
+					}
                 }else {
     				out.println("admin already exists!");
     			}
