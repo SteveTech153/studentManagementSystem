@@ -49,7 +49,7 @@ public class AdmAccCreate extends HttpServlet {
     		uname=req.getParameter("uname");
             email=req.getParameter("email");
             pass=req.getParameter("pass");
-            pass1=req.getParameter("pass1");
+            pass1=pass;
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con= null;
