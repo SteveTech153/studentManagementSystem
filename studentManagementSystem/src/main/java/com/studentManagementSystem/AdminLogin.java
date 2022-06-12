@@ -9,6 +9,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.servlet.RequestDispatcher;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -20,9 +22,9 @@ public class AdminLogin extends HttpServlet{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	 String uname;
-	 String email;
-	 String pass;
+	 static String uname;
+	 static String email;
+	 static String pass;
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -77,7 +79,10 @@ public class AdminLogin extends HttpServlet{
                 	if(!flag3)
                     	out.println("Invalid Password");
                 	else {
-						out.println("login success !");
+                			
+                		 jakarta.servlet.RequestDispatcher requestDispatcher = req.getRequestDispatcher("adminpage.jsp");
+                         requestDispatcher.forward(req, resp);
+                         
 					}
                 }
             

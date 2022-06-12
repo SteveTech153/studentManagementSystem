@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}\css\style.css">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}\css\style.css"> 
     <link rel="stylesheet" href="${pageContext.request.contextPath}\css\homestyle.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}\css\login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -20,7 +20,7 @@
 </head>
 <body>
     <div id="pages">
-
+		
         <section id="homepage">
             
         <div class="flexbox">
@@ -39,6 +39,7 @@
                     <div class="user-box">
                         <input type="text" name="uname" required>
                         <label for="uname"><b>Username</b></label>
+                        
                     </div>
         
                   <div class="user-box">
@@ -77,7 +78,7 @@
                   </div>
                 </form>
               </div>
-            <img src="C:\Users\shawl\git\studentManagementSystem\studentManagementSystem\src\main\webapp\image\name.jpg" class="logo">
+            <img src="../image/name.jpg" class="logo">
         </div>
     </div>
         </section>
@@ -85,7 +86,7 @@
         <section id="studentSignup">
             <div class="flexbox">
                <div class="homeback">
-                <img src="C:\Users\shawl\git\studentManagementSystem\studentManagementSystem\src\main\webapp\image\text.jpg" class="logo">
+                <img src="../image/text.jpg" class="logo">
                </div> 
                <div class="container">
                 <div class="signup-box" style="margin-left: 200px;">
