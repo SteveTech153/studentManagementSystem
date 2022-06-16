@@ -10,6 +10,9 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import javax.servlet.http.HttpSession;
+
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -72,7 +75,7 @@ public class StdDetailsAdding extends HttpServlet {
 		}
 		
 		
-		
+		 
 	     String name = request.getParameter("name");
 	     String rollno = request.getParameter("rollno");
 	     String degree = request.getParameter("Degree");
@@ -118,7 +121,7 @@ public class StdDetailsAdding extends HttpServlet {
 //	            is3 = filePart3.getInputStream();
 //	        }
 	        
-	            String sql = "INSERT INTO sms_stddatabase values (?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?)";
+	            String sql = "INSERT INTO sms_stddatabase values (?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?,?)";
 	            PreparedStatement statement = con.prepareStatement(sql);
 	            statement.setString(1, name);
 	            statement.setString(2, rollno);
@@ -135,7 +138,7 @@ public class StdDetailsAdding extends HttpServlet {
 	            if(twelvth!=null)
 	            	statement.setInt(13, Integer.parseInt(twelvth));
 	            else if(diploma!=null)
-	            	statement.setInt(13, Integer.parseInt(diploma));
+	            	statement.setInt(14, Integer.parseInt(diploma));
 				
 //	            if (is != null&&is2 != null&&is3 != null) {
 //	            	

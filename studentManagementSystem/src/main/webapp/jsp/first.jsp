@@ -177,7 +177,7 @@
 
   
 </script>
-<script type="text/javascript" src="script\skrollr.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}\script\skrollr.js"></script>
 	<script type="text/javascript">
 	var s = skrollr.init();
 	</script>

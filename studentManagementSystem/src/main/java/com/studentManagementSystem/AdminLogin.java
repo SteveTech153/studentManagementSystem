@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpSession;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -22,7 +23,7 @@ public class AdminLogin extends HttpServlet{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	 static String uname;
+	 static String uname1;
 	 static String email;
 	 static String pass;
     
@@ -44,10 +45,14 @@ public class AdminLogin extends HttpServlet{
 			e.printStackTrace();
 		}
     }
+    
     void func1(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException,SQLException {
-    	uname=req.getParameter("uname");
+    	uname1=req.getParameter("uname");
         email=req.getParameter("email");
         pass=req.getParameter("pass");
+        jakarta.servlet.http.HttpSession session = req.getSession();
+        session.setAttribute("adminUname", uname1);
+        
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con= null;
@@ -57,7 +62,7 @@ public class AdminLogin extends HttpServlet{
             PrintWriter out = resp.getWriter();
             boolean flag1 = false;
             while(rs.next()) {
-            	if(rs.getString("username").compareTo(uname)==0) {
+            	if(rs.getString("username").compareTo(uname1)==0) {
             		flag1=true;
             		break;
             	}

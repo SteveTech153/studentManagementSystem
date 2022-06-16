@@ -19,7 +19,7 @@
 		
 		%>>
 	<%
-	
+	response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 	Class.forName("com.mysql.jdbc.Driver");
 	
 	con = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo_schema1","root","Steve07@mysql");

@@ -15,6 +15,8 @@
 
 </head>
 <body>
+	<%response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
+	
     <div class="container">
         <div class="navigation">
           <div class="menu-toggle"></div>
@@ -114,12 +116,12 @@
               <label for="Diploma">Diploma Mark:</label>
               <input type="number" name="Diploma" id="Diploma">
           </div>
-          <div class="form-group">
+         
+          </div>
+           <div class="form-group">
               <label for="mobile">Mobile :</label>
               <input type="text" name="mobile" id="mobile">
           </div>
-          </div>
-          
                
 
                 <div class="form-row">
@@ -185,7 +187,7 @@
           </div>
         </div>
       </div>
-      
+      <%session.setAttribute("uname", session.getAttribute("uname")); %>
 
 
 <script src="script/admin.js"></script>

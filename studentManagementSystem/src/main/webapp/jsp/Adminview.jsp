@@ -15,6 +15,7 @@
 
 </head>
 <body>
+	<%response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
     <div class="container">
         <div class="navigation">
           <div class="menu-toggle"></div>
@@ -49,21 +50,21 @@
             <h2>Enter Student Roll number</h2>
             
             <p> 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             
+                <form action="AdminDtlsView.jsp"> 
+                <input type="text" placeholder="Type here" id="rollno" name="rollno" required onkeydown="search(this)>
+                <input type="submit" value="Submit Form" class="submit" name="submit" id="submit" />
+                </form>
                 
-
-
-                <code><em>Student ID:</em></code>&#9;
-                &nbsp;&nbsp;
-                <input type="text" placeholder="Type here" required onkeydown="search(this)>
+                
          </p>
+         
           </div>
       </div>
       
 
 
-<script src="script/admin.js"></script>
+<script src="${pageContext.request.contextPath}\script\admin.js"></script>
 <script>$(function(){
   $("a").click(function(evt){
       var link = $(this).attr("href");

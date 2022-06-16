@@ -8,6 +8,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.servlet.http.HttpSession;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -44,6 +46,9 @@ public class StudentLogin extends HttpServlet{
 	    	uname=req.getParameter("uname");
 	        email=req.getParameter("email");
 	        pass=req.getParameter("pass");
+	        jakarta.servlet.http.HttpSession session = req.getSession();
+	        session.setAttribute("StdUname", uname);
+	        
 	        try {
 	            Class.forName("com.mysql.jdbc.Driver");
 	            Connection con= null;
@@ -75,7 +80,8 @@ public class StudentLogin extends HttpServlet{
 	                	if(!flag3)
 	                    	out.println("Invalid Password");
 	                	else {
-							out.println("login success !");
+	                		jakarta.servlet.RequestDispatcher requestDispatcher = req.getRequestDispatcher("StdPage.jsp");
+	                         requestDispatcher.forward(req, resp);
 						}
 	                }
 	            

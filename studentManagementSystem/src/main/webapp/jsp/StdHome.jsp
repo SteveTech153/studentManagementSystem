@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Home</title>
+    <title>Stduent Home</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -21,30 +21,30 @@
         <div class="navigation">
           <div class="menu-toggle"></div>
           <ul class="list">
-            <li class="list-item active" style="--color:#f44336"><a href="Adminhome.jsp">
+            <li class="list-item active" style="--color:#f44336"><a href="StdHome.jsp">
               <span class="icon">
                 <ion-icon name="home-outline"></ion-icon>
               </span>
               <span class="text">Home</span>
-              </a></li>	
-            <li class="list-item" style="--color:#ff6801"><a href="Adminadd.jsp">
+              </a></li>
+            <!-- <li class="list-item" style="--color:#ff6801"><a href="Adminadd.jsp">
               <span class="icon">
                 <ion-icon name="person-add"></ion-icon>
-            </span>
+            </span> 
               <span class="text">Add Students</span>
-              </a></li>
-            <li class="list-item" style="--color:#0fc70f"><a href="Adminview.jsp">
+              </a></li>  --> 
+            <li class="list-item" style="--color:#0fc70f"><a href="StdView.jsp">
               <span class="icon">
                 <ion-icon name="eye"></ion-icon>
             </span>
-              <span class="text">View Students</span>
+              <span class="text">View Details</span>
               </a></li>
-            <li class="list-item" style="--color:#2196f3"><a href="#">
+            <!-- <li class="list-item" style="--color:#2196f3"><a href="#">
               <span class="icon">
                 <i class="fa fa-pencil " aria-hidden="true"></i>
             </span>
               <span class="text">Update Student</span>
-              </a></li>
+              </a></li>  --> 
                <li class="list-item" style="--color:#0fc70f"><a href="first.jsp">
               <span class="icon">
                 <ion-icon src="http://cdn.onlinewebfonts.com/svg/img_90902.png"></ion-icon>
@@ -54,17 +54,17 @@
           </ul>
         </div>
         <div class="desc">
-            <h2>Welcome <span style="color:#f44336;"></span>to the Admin Side</h2>
+            <h2>Welcome<span style="color:#f44336;"></span></h2>
             
-            <p><code><em>User name:</em></code><span style="color:#f44336;">&#9;<%=session.getAttribute("adminUname")%></span>, </p>
-            <p><code><em>User Role:</em></code><span style="color:#f44336;">&#9;Teacher</span> </p>
+            <p><code><em>User name:</em></code><span style="color:#f44336;">&#9;<%=session.getAttribute("StdUname")%></span> , </p>
+            <p><code><em>User Role:</em></code><span style="color:#f44336;">&#9;Student</span> </p>
           </div>
       </div>
       
       <!-- jakarta.servlet.RequestDispatcher requestDispatcher = request.getRequestDispatcher("adminpage.jsp");
                  requestDispatcher.forward(request, response);
                   -->
-
+		
 
 <script src="${pageContext.request.contextPath}\script\admin.js"></script>
 <script>$(function(){

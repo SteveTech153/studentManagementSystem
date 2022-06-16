@@ -1,0 +1,42 @@
+<%! Connection con;
+		Statement stmt;
+		ResultSet rs;
+		static String uname1,pass,email;
+		%>
+	<%  Class.forName("com.mysql.jdbc.Driver");
+	uname1=request.getParameter("uname");
+	session.setAttribute("StdUname",uname1);
+    //email=request.getParameter("email");
+    pass=request.getParameter("pass");
+    Connection con= null;
+    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo_schema1","root","Steve07@mysql");
+    Statement stmt = con.createStatement();
+    ResultSet rs = stmt.executeQuery("select * from sms_stdlogin");
+    boolean flag1 = false;
+    while(rs.next()) {
+    	if(rs.getString("username").compareTo(uname1)==0) {
+    		flag1=true;
+    		break;
+    	}
+    	
+    }
+    if(!flag1)
+    	out.println("Invalid username");
+    else {
+        	boolean flag3 = false;
+        	ResultSet rs2 = stmt.executeQuery("select * from sms_stdlogin");
+        		while(rs2.next()) {
+            	if(rs2.getString("password").compareTo(pass)==0) {
+            		flag3=true;
+            		break;
+            		
+            	}
+        
+            }
+        	if(!flag3)
+            	out.println("Invalid Password");
+        	else {
+        			
+        		 
+			}
+        } %>
