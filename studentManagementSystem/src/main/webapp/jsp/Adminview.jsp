@@ -15,7 +15,7 @@
 
 </head>
 <body>
-	<%response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
+	<%response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");response.setHeader("pragma","no-cache"); %>
     <div class="container">
         <div class="navigation">
           <div class="menu-toggle"></div>
@@ -38,11 +38,17 @@
             </span>
               <span class="text">View Students</span>
               </a></li>
-            <li class="list-item" style="--color:#2196f3"><a href="#">
+            <li class="list-item" style="--color:#2196f3"><a href="AdminDetailsUpdate.jsp">
               <span class="icon">
                 <i class="fa fa-pencil " aria-hidden="true"></i>
             </span>
               <span class="text">Update Student</span>
+              </a></li>
+              <li class="list-item" style="--color:#0fc70f"><a href="first.jsp">
+              <span class="icon">
+                <ion-icon src="http://cdn.onlinewebfonts.com/svg/img_90902.png"></ion-icon>
+            </span>
+              <span class="text">Log out</span>
               </a></li>
           </ul>
         </div>
@@ -53,7 +59,7 @@
              
                 <form action="AdminDtlsView.jsp"> 
                 <input type="text" placeholder="Type here" id="rollno" name="rollno" required onkeydown="search(this)>
-                <input type="submit" value="Submit Form" class="submit" name="submit" id="submit" />
+                <input type="submit"  class="submit" name="submit" id="submit" />
                 </form>
                 
                 

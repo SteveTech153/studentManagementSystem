@@ -22,7 +22,7 @@
 		static String rollno,name,degree,dept,joindate,dob,bgp,mobile,gender,address,email,tenth,twelvth,diploma;
 		%>
 	<%
-	response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); 
+	response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); response.setHeader("pragma","no-cache");
 	Class.forName("com.mysql.jdbc.Driver");
 	Connection con= null;
     con = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo_schema1","root","Steve07@mysql");

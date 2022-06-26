@@ -11,7 +11,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>admLog</servlet-name>
-        <jsp-file>/jsp/adminpage.jsp</jsp-file>
+    <jsp-file>/jsp/adminpage.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
     <servlet-name>admLog</servlet-name>
@@ -54,5 +54,15 @@
   <servlet-mapping>
     <servlet-name>StdDetailsAdding</servlet-name>
     <url-pattern>/jsp/StdDetailsAdding</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StdDetailsUpdate</display-name>
+    <servlet-name>StdDetailsUpdate</servlet-name>
+    <servlet-class>com.studentManagementSystem.StdDetailsUpdate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StdDetailsUpdate</servlet-name>
+    <url-pattern>/jsp/StdDetailsUpdate</url-pattern>
   </servlet-mapping>
 </web-app>

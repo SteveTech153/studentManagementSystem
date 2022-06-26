@@ -15,7 +15,7 @@
 
 </head>
 <body>
-	<%response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
+	<%response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");response.setHeader("pragma","no-cache"); %>
 	
     <div class="container">
         <div class="navigation">
@@ -39,17 +39,23 @@
             </span>
               <span class="text">View Students</span>
               </a></li>
-            <li class="list-item" style="--color:#2196f3"><a href="#">
+            <li class="list-item" style="--color:#2196f3"><a href="AdminDetailsUpdate.jsp">
               <span class="icon">
                 <i class="fa fa-pencil " aria-hidden="true"></i>
             </span>
               <span class="text">Update Student</span>
               </a></li>
+              <li class="list-item" style="--color:#0fc70f"><a href="first.jsp">
+              <span class="icon">
+                <ion-icon src="http://cdn.onlinewebfonts.com/svg/img_90902.png"></ion-icon>
+            </span>
+              <span class="text">Log out</span>
+              </a></li>
           </ul>
         </div>
         <div class="desc">
           <div class="signup-form">
-            <form method="POST" class="register-form" id="register-form" action="StdDetailsAdding">
+            <form method="POST" class="register-form" id="register-form" action="StdDetailsAdd.jsp">
                 <h2>student registration form</h2>
            
                 <div class="form-row">
@@ -190,7 +196,7 @@
       <%session.setAttribute("uname", session.getAttribute("uname")); %>
 
 
-<script src="script/admin.js"></script>
+<script src="${pageContext.request.contextPath}\script\admin.js"></script>
 <script>
 (function($) {
 

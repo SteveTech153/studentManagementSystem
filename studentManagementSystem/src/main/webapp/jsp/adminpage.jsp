@@ -16,7 +16,7 @@
 
 </head>
 <body>
-	<%response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
+	<%response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); response.setHeader("pragma","no-cache");	%>
     <div class="container">
         <div class="navigation">
           <div class="menu-toggle"></div>
@@ -39,7 +39,7 @@
             </span>
               <span class="text">View Students</span>
               </a></li>
-            <li class="list-item" style="--color:#2196f3"><a href="#">
+            <li class="list-item" style="--color:#2196f3"><a href="AdminDetailsUpdate.jsp">
               <span class="icon">
                 <i class="fa fa-pencil " aria-hidden="true"></i>
             </span>
@@ -56,7 +56,7 @@
         <div class="desc">
             <h2>Welcome <span style="color:#f44336;"></span>to the Admin Side</h2>
             
-            <p><code><em>User name:</em></code><span style="color:#f44336;">&#9;<%=session.getAttribute("adminUname")%></span>, </p>
+           <!-- <p><code><em>User name:</em></code><span style="color:#f44336;">&#9;<%=session.getAttribute("AdminUname")%></span>, </p> --> 
             <p><code><em>User Role:</em></code><span style="color:#f44336;">&#9;Teacher</span> </p>
           </div>
       </div>

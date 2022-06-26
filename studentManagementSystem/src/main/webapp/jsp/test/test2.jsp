@@ -8,9 +8,9 @@
 <title>Test 2</title>
 </head>
 <body>	
-	<form action="test" method="post">
+	<form action="test.jsp" method="post">
 		 <label for="uname">username :</label><br>
- 		 <input type="text" id="uname" name="uname"><br>
+ 		 <input type="text" id="uname" name="uname" ><br>	
  		 <input type="submit">
 	</form>
 </body>

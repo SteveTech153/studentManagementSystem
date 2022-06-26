@@ -22,7 +22,7 @@ import java.io.*;
 @WebServlet("/StdDetailsAdding")
 @MultipartConfig(maxFileSize = 16177215)
 public class StdDetailsAdding extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+private static final long serialVersionUID = 1L;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		try {
@@ -55,13 +55,10 @@ public class StdDetailsAdding extends HttpServlet {
 		Statement stmt;
 		ResultSet rs;
 		String uname1,pass,email;
-		InputStream is = null;
-		InputStream is2 = null;
-		InputStream is3 = null;
-//		Part filePart,filePart2,filePart3;
+		
 		PrintWriter out = response.getWriter();
 		Connection con=null;
-//		out.print("inside");
+//		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo_schema1","root","Steve07@mysql");
@@ -140,12 +137,6 @@ public class StdDetailsAdding extends HttpServlet {
 	            else if(diploma!=null)
 	            	statement.setInt(14, Integer.parseInt(diploma));
 				
-//	            if (is != null&&is2 != null&&is3 != null) {
-//	            	
-//	                statement.setBlob(12, is);
-//	                statement.setBlob(13, is2);
-//	                statement.setBlob(14, is3);
-//	            }
 	            String message;
 	            // sends the statement to the database server
 	            int row = statement.executeUpdate();

@@ -1,4 +1,4 @@
- <%@page import = "com.studentManagementSystem.AdminLogin" %>
+
  <%@page import = "java.sql.*" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +16,7 @@
 
 </head>
 <body>
-	<%response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
+	<%response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");response.setHeader("pragma","no-cache");	 %>
     <div class="container">
         <div class="navigation">
           <div class="menu-toggle"></div>
@@ -64,7 +64,7 @@
       <!-- jakarta.servlet.RequestDispatcher requestDispatcher = request.getRequestDispatcher("adminpage.jsp");
                  requestDispatcher.forward(request, response);
                   -->
-		
+
 
 <script src="${pageContext.request.contextPath}\script\admin.js"></script>
 <script>$(function(){

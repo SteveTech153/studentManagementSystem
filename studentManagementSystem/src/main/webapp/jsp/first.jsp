@@ -19,6 +19,9 @@
     <title>Homepage</title>
 </head>
 <body>
+
+<%response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); 
+	response.setHeader("pragma","no-cache");		%>
     <div id="pages">
 		
         <section id="homepage">
@@ -70,15 +73,15 @@
                     <label for="pass"><b>Password</b> </label>
                     
                   </div>
-                  <div class="foot">
-                    <div class="subsignup"><a href="#studentSignup">sign up</a></div>
+                    <div class="foot">
+                    <!-- <div class="subsignup"><a href="#studentSignup">sign up</a></div> -->
                     <div class="sublogin">
                         <button>Login</button>
                     </div>
                   </div>
                 </form>
               </div>
-            <img src="../image/name.jpg" class="logo">
+            <img src="../image/name.jpg" class="logo" >
         </div>
     </div>
         </section>

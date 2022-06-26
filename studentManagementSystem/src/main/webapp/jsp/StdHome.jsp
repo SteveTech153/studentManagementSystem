@@ -1,4 +1,4 @@
- <%@page import = "com.studentManagementSystem.AdminLogin" %>
+ 
  <%@page import = "java.sql.*" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +16,7 @@
 
 </head>
 <body>
-	<%response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
+	<%response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); response.setHeader("pragma","no-cache");%>
     <div class="container">
         <div class="navigation">
           <div class="menu-toggle"></div>

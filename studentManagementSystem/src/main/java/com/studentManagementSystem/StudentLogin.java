@@ -54,11 +54,11 @@ public class StudentLogin extends HttpServlet{
 	            Connection con= null;
 	            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo_schema1","root","Steve07@mysql");
 	            Statement stmt = con.createStatement();
-	            ResultSet rs = stmt.executeQuery("select * from sms_stdlogin");
+	            ResultSet rs = stmt.executeQuery("select * from sms_stddatabase");
 	            PrintWriter out = resp.getWriter();
 	            boolean flag1 = false;
 	            while(rs.next()) {
-	            	if(rs.getString("username").compareTo(uname)==0) {
+	            	if(rs.getString("RollNo").compareTo(uname)==0) {
 	            		flag1=true;
 	            		break;
 	            	}
@@ -68,9 +68,9 @@ public class StudentLogin extends HttpServlet{
 	            	out.println("Invalid username");
 	            else {
 	                	boolean flag3 = false;
-	                	ResultSet rs2 = stmt.executeQuery("select * from sms_stdlogin");
+	                	ResultSet rs2 = stmt.executeQuery("select * from sms_stddatabase");
 	                		while(rs2.next()) {
-	                    	if(rs2.getString("password").compareTo(pass)==0) {
+	                    	if(rs2.getString("RollNo").compareTo(pass)==0) {
 	                    		flag3=true;
 	                    		break;
 	                    		

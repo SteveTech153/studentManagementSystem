@@ -51,7 +51,7 @@ public class AdminLogin extends HttpServlet{
         email=req.getParameter("email");
         pass=req.getParameter("pass");
         jakarta.servlet.http.HttpSession session = req.getSession();
-        session.setAttribute("adminUname", uname1);
+        session.setAttribute("AdminUname", uname1);
         
         try {
             Class.forName("com.mysql.jdbc.Driver");

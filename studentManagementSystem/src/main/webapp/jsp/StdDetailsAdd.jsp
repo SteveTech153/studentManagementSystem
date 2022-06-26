@@ -12,86 +12,67 @@
 		Statement stmt;
 		ResultSet rs;
 		String uname1,pass,email;
-		InputStream is = null;
-		InputStream is2 = null;
-		InputStream is3 = null;
-		Part filePart,filePart2,filePart3;
+		String message;
 		
 		%>>
 	<%
-	response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
+	response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");response.setHeader("pragma","no-cache");
 	Class.forName("com.mysql.jdbc.Driver");
 	
 	con = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo_schema1","root","Steve07@mysql");
 	stmt = con.createStatement();
-
-     String name = request.getParameter("fname");
+	 message = null;
+	 String name = request.getParameter("name");
      String rollno = request.getParameter("rollno");
-     String degree = request.getParameter("degree");
-     String dpt = request.getParameter("dpt");   
+     String degree = request.getParameter("Degree");
+     String dpt = request.getParameter("Course");
      String joindate = request.getParameter("joindate");   
      /*SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd"); 
      java.sql.Date startDate = sdf.parse(request.getParameter("joindate"));*/
-	 String dob = request.getParameter("dob");
+	 String dob = request.getParameter("birth_date");
      String bloodgp = request.getParameter("bloodgp");
      String mobile = request.getParameter("mobile");
      String gender= request.getParameter("gender");
      String address = request.getParameter("address");
-     String email = request.getParameter("email");
-     
-        filePart = request.getPart ("10th");
-     	filePart2 = request.getPart("12th");
-     	filePart3 = request.getPart("aadhar");
-     	
-        if (filePart != null&&filePart2 != null&&filePart3 != null) {
-    		
-            System.out.println(filePart.getName());
-            System.out.println(filePart.getSize());
-            System.out.println(filePart.getContentType());
-            System.out.println("");
-            System.out.println(filePart2.getName());
-            System.out.println(filePart2.getSize());
-            System.out.println(filePart2.getContentType());
-            System.out.println("");
-            System.out.println(filePart3.getName());
-            System.out.println(filePart3.getSize());
-            System.out.println(filePart3.getContentType());
-            is = filePart.getInputStream();
-            is2 = filePart2.getInputStream();
-            is3 = filePart3.getInputStream();
-        }
-         
-        Connection conn = null; 
-        String message = null;  
-       
- 
-            String sql = "INSERT INTO sms_stddatabase values (?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?,?)";
-            PreparedStatement statement = conn.prepareStatement(sql);
-            statement.setString(1, name);
-            statement.setString(2, rollno);
-            statement.setString(3, degree);
-            statement.setString(4, dpt);
-            statement.setString(5, joindate);
-            statement.setString(6, dob);
-            statement.setString(7, bloodgp);
-            statement.setString(8, mobile);
-            statement.setString(9, gender);
-            statement.setString(10, address);
-            statement.setString(11, email);
-            
-            if (is != null&&is2 != null&&is3 != null) {
+     String pincode = request.getParameter("pincode");
+     String tenth = request.getParameter("10");
+     String twelvth = request.getParameter("12");
+     String diploma = request.getParameter("Diploma");
+     email = request.getParameter("email");
       
-                statement.setBlob(12, is);
-                statement.setBlob(13, is2);
-                statement.setBlob(14, is3);
-            }
- 
-            // sends the statement to the database server
-            int row = statement.executeUpdate();
-            if (row > 0) {
-                message = "File uploaded and saved into database";
-            }
+     	
+     String sql = "INSERT INTO sms_stddatabase values (?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?,?,?)";
+     PreparedStatement statement = con.prepareStatement(sql);
+     statement.setString(1, name);
+     statement.setString(2, rollno);
+     statement.setString(3, degree);
+     statement.setString(4, dpt);
+     statement.setString(5, joindate);
+     statement.setString(6, dob);
+     statement.setString(7, bloodgp);
+     statement.setString(8, mobile);
+     statement.setString(9, gender);
+     statement.setString(10, address);
+     statement.setString(11, email);
+     statement.setInt(12,Integer.parseInt(tenth));
+   	 if(twelvth.length()>1){
+     	statement.setInt(13, Integer.parseInt(twelvth));
+     	statement.setInt(14, 0);
+   	 }
+   	 else if(diploma.length()>1){
+     	statement.setInt(14, Integer.parseInt(diploma));
+     	statement.setInt(13, 0);}
+		
+     String message;
+     // sends the statement to the database server
+     int row = statement.executeUpdate();
+     if (row > 0) {
+     	response.sendRedirect(request.getContextPath() + "/jsp/AddDtlsRes.jsp");
+     }
+     else {
+			message = "couldn't register";
+		}
 	%>
-	<h3><% out.println(message); %> </h3>
+	
 </body>
 </html>
