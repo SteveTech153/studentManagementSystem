@@ -26,11 +26,11 @@
               </span>
               <span class="text">Home</span>
               </a></li>
-            <li class="list-item active" style="--color:#ff6801"><a href="Adminadd.jsp">
+            <li class="list-item" style="--color:#ff6801"><a href="Adminadd.jsp">
               <span class="icon">
                 <ion-icon name="person-add"></ion-icon>
             </span>
-              <span class="text active">Add Students</span>
+              <span class="text">Add Students</span>
               </a></li>
            <li class="list-item" style="--color:#0fc70f"><a href="Adminview.jsp">
               <span class="icon">
@@ -38,7 +38,7 @@
             </span>
               <span class="text">View Students</span>
               </a></li>
-            <li class="list-item" style="--color:#2196f3"><a href="AdminDetailsUpdate.jsp">
+            <li class="list-item active" style="--color:#2196f3"><a href="AdminDetailsUpdate.jsp">
               <span class="icon">
                 <i class="fa fa-pencil " aria-hidden="true"></i>
             </span>
@@ -54,7 +54,7 @@
         </div>
         <div class="desc">
         	
-            <h2>Student <span style="color:#f44336;"></span>details added successfully !</h2>
+            <h2> Roll number <span style="color:#f44336;"></span>not registered !</h2>
             
             <!-- <p><code><em>User ID:</em></code><span style="color:#f44336;">&#9; </span>, </p> -->
             <!-- <p><code><em>User Role:</em></code><span style="color:#f44336;">&#9;Teacher</span> </p>-->

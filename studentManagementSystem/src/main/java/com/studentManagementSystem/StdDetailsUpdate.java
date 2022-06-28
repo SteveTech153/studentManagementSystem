@@ -38,7 +38,7 @@ public class StdDetailsUpdate extends HttpServlet {
 	}
 	
 	public static void func1(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, ClassNotFoundException, SQLException{
-
+			
 		ResultSet rs;
 		String uname1,pass,email;
 		PrintWriter out = response.getWriter();
@@ -63,7 +63,7 @@ public class StdDetailsUpdate extends HttpServlet {
 	     String diploma = request.getParameter("Diploma");
 	     email = request.getParameter("email");
 	     
-	     		String sql = "update sms_stddatabase set name = ?, RollNo ?,Degree=?,Dept=?,joindate=?,dob=?,bloodgp=?,mobile=?,gender=?,address=?,email=?,tenth=?,twelvth=?,diploma=? where RollNo = rollno";
+	     		String sql = "update sms_stddatabase set name = ?, RollNo =?,Degree=?,Dept=?,joindate=?,dob=?,bloodgp=?,mobile=?,gender=?,address=?,email=?,tenth=?,twelvth=?,diploma=? where RollNo = ?";
 	            PreparedStatement statement1 = con.prepareStatement(sql);
 	            statement1.setString(1, name);
 	            statement1.setString(2, rollno);
@@ -77,25 +77,30 @@ public class StdDetailsUpdate extends HttpServlet {
 	            statement1.setString(10, address);
 	            statement1.setString(11, email);
 	            statement1.setInt(12,Integer.parseInt(tenth));
-	            if(twelvth!=null)
+	            if(twelvth!=null){
 	            	statement1.setInt(13, Integer.parseInt(twelvth));
-	            else if(diploma!=null)
+	            	statement1.setInt(14, 0);
+	            		
+	            }
+	            else if(diploma!=null){
 	            	statement1.setInt(14, Integer.parseInt(diploma));
-	            
-	            
+	            	statement1.setInt(13, 0);
+	            	}
+	            statement1.setString(15, rollno);
 	            String message;
 	            
 	            int row = statement1.executeUpdate();
+	            
 	            //out.print("success !");
 	            if (row > 0) {
 	            	//out.print("success !");
 	            	response.sendRedirect(request.getContextPath() + "/jsp/UpdateDtlsRes.jsp");
 	            }
-	            else {
-					out.print("couldn't register");
-				}
 	            
-	}
+	            
+	            
+	     	
+	     }
 		
 	}
 

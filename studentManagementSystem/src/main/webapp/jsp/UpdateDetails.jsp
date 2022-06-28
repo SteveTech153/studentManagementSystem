@@ -45,7 +45,8 @@
     	twelvth=rs.getString("twelvth");
     	diploma = rs.getString("diploma");
     }
-    
+    if(rollno==null)
+    	response.sendRedirect(request.getContextPath() + "/jsp/nouser.jsp");
     
 	
 	%>
@@ -88,7 +89,7 @@
         </div>
         <div class="desc">
           <div class="signup-form">
-            <form method="POST" class="register-form" id="register-form" action="UpdateDetailsHandler.jsp">
+            <form method="POST" class="register-form" id="register-form" action="StdDetailsUpdate">
                 <h2>Student Details</h2>
            
                 <div class="form-row">
