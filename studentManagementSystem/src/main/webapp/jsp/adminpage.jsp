@@ -56,7 +56,7 @@
         <div class="desc">
             <h2>Welcome <span style="color:#f44336;"></span>to the Admin Side</h2>
             
-           <!-- <p><code><em>User name:</em></code><span style="color:#f44336;">&#9;<%=session.getAttribute("AdminUname")%></span>, </p> --> 
+            <p><code><em>User name:</em></code><span style="color:#f44336;">&#9;<%=session.getAttribute("AdminUname")%></span>, </p>  
             <p><code><em>User Role:</em></code><span style="color:#f44336;">&#9;Teacher</span> </p>
           </div>
       </div>

@@ -52,10 +52,13 @@
                 
                   </div>
                   <div class="foot">
+                  	
                     <div class="subsignup"><a href="#AdminSignup">sign up</a></div>
+              
                     <div class="sublogin">
                         <button>Login</button>
                     </div>
+             
                   </div>
                 </form>
               </div>

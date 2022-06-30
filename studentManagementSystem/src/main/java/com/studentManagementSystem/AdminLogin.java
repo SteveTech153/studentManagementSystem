@@ -19,9 +19,6 @@ import jakarta.servlet.http.HttpServletResponse;
 
 public class AdminLogin extends HttpServlet{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	 static String uname1;
 	 static String email;
@@ -48,7 +45,6 @@ public class AdminLogin extends HttpServlet{
     
     void func1(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException,SQLException {
     	uname1=req.getParameter("uname");
-        email=req.getParameter("email");
         pass=req.getParameter("pass");
         jakarta.servlet.http.HttpSession session = req.getSession();
         session.setAttribute("AdminUname", uname1);

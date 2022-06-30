@@ -93,5 +93,4 @@ public class StudentLogin extends HttpServlet{
 	            throw new RuntimeException(e);
 	        }
 	    }
-
 }

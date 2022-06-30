@@ -11,7 +11,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>admLog</servlet-name>
-    <jsp-file>/jsp/adminpage.jsp</jsp-file>
+    <servlet-class>com.studentManagementSystem.AdminLogin</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>admLog</servlet-name>
